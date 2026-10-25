@@ -386,6 +386,7 @@
           state.mode = "order"; state.order = {};
           return [askStep("type")];
         }
+        if (!token && matchIntent(n) === "human") return startHandoff();
         return [summaryMsg()];
       }
 
