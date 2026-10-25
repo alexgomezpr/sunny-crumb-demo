@@ -6,7 +6,12 @@
   <title>Sunny Crumb Bakery (fictional) · Bilingual chatbot demo</title>
   <meta name="description" content="Portfolio demo: a bilingual English/Spanish customer-service chatbot for a fictional Orlando bakery. Not a real business.">
   <meta name="robots" content="noindex">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <meta name="theme-color" content="#b5651d">
+  <meta property="og:title" content="Sunny Crumb Bakery (fictional) · Bilingual chatbot demo">
+  <meta property="og:description" content="Portfolio demo of a bilingual English/Spanish bakery chatbot. Fictional business.">
+  <meta property="og:image" content="https://alexgomezpr.github.io/sunny-crumb-demo/img/og-hero.jpg">
+  <link rel="preload" as="image" type="image/webp" href="img/hero.webp" imagesrcset="img/hero-720.webp 720w, img/hero.webp 1200w" imagesizes="(max-width: 760px) 92vw, 45vw">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -16,7 +21,7 @@
 
   <header class="site-header">
     <a class="brand" href="#top" id="top">
-      <span class="brand-logo" aria-hidden="true">☀️</span>
+      <img class="brand-logo" src="img/logo.svg" width="40" height="40" alt="">
       <span class="brand-text">Sunny Crumb <small>Bakery · <em>fictional</em></small></span>
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -38,9 +43,12 @@
         <p data-i18n="heroText">A made-up neighborhood bakery used to show off a bilingual chatbot.</p>
         <button type="button" class="btn btn-primary" data-open-chat="" data-i18n="heroCta">Chat with our assistant</button>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-plate">🥐<span>🧁</span><span>☕</span></div>
-      </div>
+      <figure class="hero-art">
+        <img src="img/hero.webp" srcset="img/hero-720.webp 720w, img/hero.webp 1200w" sizes="(max-width: 760px) 92vw, 45vw"
+             width="1200" height="900" fetchpriority="high" decoding="async"
+             data-i18n-attr="alt:heroImgAlt" alt="Guava pastelitos, a cafecito and a berry-topped celebration cake on a bakery counter (illustrative photo)">
+        <figcaption class="hero-badge"><img src="img/logo.svg" width="28" height="28" alt=""> <span data-i18n="heroBadge">Baked daily · fictional bakery</span></figcaption>
+      </figure>
     </section>
 
     <section id="menu" class="section">
@@ -55,32 +63,39 @@
         <div id="hours-list" class="hours-list"></div>
       </div>
       <div class="address-card">
-        <div class="pin" aria-hidden="true">📍</div>
+        <svg class="pin" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z" fill="#b5651d"/><circle cx="12" cy="9" r="2.6" fill="#fff8ef"/></svg>
         <p><strong id="address">123 Make-Believe Lane, Orlando, FL</strong><br>
           <span class="muted" data-i18n="addressNote">(fictional address)</span></p>
       </div>
     </section>
 
     <section id="orders" class="section orders">
-      <h2 data-i18n="ordersTitle">Custom celebration cakes</h2>
-      <p data-i18n="ordersText">Birthdays, weddings, quinceañeras and baby showers.</p>
-      <button type="button" class="btn btn-secondary" data-open-chat="#order" data-i18n="ordersCta">Start a cake request</button>
+      <div class="orders-media">
+        <img src="img/custom-cake.webp" width="900" height="675" loading="lazy" decoding="async"
+             data-i18n-attr="alt:cakeImgAlt" alt="Two-tier cream celebration cake with peach and yellow sugar flowers (illustrative photo)">
+      </div>
+      <div class="orders-copy">
+        <h2 data-i18n="ordersTitle">Custom celebration cakes</h2>
+        <p data-i18n="ordersText">Birthdays, weddings, quinceañeras and baby showers.</p>
+        <button type="button" class="btn btn-secondary" data-open-chat="#order" data-i18n="ordersCta">Start a cake request</button>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p data-i18n="footer">Portfolio demo of a scripted bilingual chatbot · Fictional business · No real contact info</p>
+    <p class="photo-note" data-i18n="photoNote">Photos are AI-generated illustrations for this demo.</p>
   </footer>
 
   <!-- Chat widget -->
   <button type="button" id="chat-launcher" class="chat-launcher" aria-controls="chat-panel" aria-expanded="false"
           data-i18n-attr="aria-label:open;title:open" aria-label="Open chat">
-    <span aria-hidden="true">💬</span>
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="currentColor"/><circle cx="8" cy="11" r="1.4" fill="#b5651d"/><circle cx="12" cy="11" r="1.4" fill="#b5651d"/><circle cx="16" cy="11" r="1.4" fill="#b5651d"/></svg>
   </button>
 
   <section id="chat-panel" class="chat-panel" role="dialog" aria-labelledby="chat-title" hidden>
     <header class="chat-header">
-      <div class="chat-avatar" aria-hidden="true">☀️</div>
+      <div class="chat-avatar" aria-hidden="true"><img src="img/logo.svg" width="30" height="30" alt=""></div>
       <div class="chat-titles">
         <h2 id="chat-title" data-i18n="botName">Sunny Crumb Assistant</h2>
         <p class="chat-sub"><span class="demo-pill" data-i18n="botSub">Demo · fictional business</span></p>

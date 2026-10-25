@@ -70,3 +70,8 @@ Any static host works. Upload the folder as-is (`tests/` and `screenshots/` are 
 
 ---
 Built as a portfolio demo. AI-assisted, personally reviewed.
+
+## Images
+- `img/hero.webp` (+ `hero-720.webp` for phones), `img/custom-cake.webp`, `img/menu/*.webp` (card banners, 640×400) and `img/thumbs/*.webp` (item thumbnails, 160×160). `img/og-hero.jpg` is only the social-share preview.
+- All food photos are **AI-generated illustrations** made for this fictional demo (noted in the page footer). They show no real business, brand, or person.
+- `img/logo.svg` is the logo mark, also used as the favicon and the chat avatar.

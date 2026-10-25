@@ -56,12 +56,19 @@
     box.innerHTML = "";
     Object.keys(SC.MENU_CATS).forEach(function (cat) {
       var items = SC.MENU.filter(function (i) { return i.cat === cat; });
+      var c = SC.MENU_CATS[cat];
       var card = el("div", "menu-card");
-      card.appendChild(el("h3", null, esc(SC.MENU_CATS[cat][lang])));
+      if (c.img) {
+        var fig = el("div", "menu-card-media");
+        fig.innerHTML = '<img src="img/menu/' + c.img + '.webp" width="640" height="400" loading="lazy" decoding="async" alt="' + esc(c.alt[lang]) + '">';
+        card.appendChild(fig);
+      }
+      card.appendChild(el("h3", null, esc(c[lang])));
       var ul = el("ul");
       items.forEach(function (i) {
         var li = el("li");
-        li.innerHTML = '<span class="mi-name">' + i.emoji + " " + esc(i.name[lang]) + '</span><span class="mi-price">$' +
+        li.innerHTML = '<img class="mi-thumb" src="img/thumbs/' + i.id + '.webp" width="56" height="56" loading="lazy" decoding="async" alt="">' +
+          '<span class="mi-name">' + esc(i.name[lang]) + '</span><span class="mi-price">$' +
           (i.price % 1 === 0 ? i.price.toFixed(0) : i.price.toFixed(2)) + '</span><span class="mi-desc">' + esc(i.desc[lang]) + "</span>";
         ul.appendChild(li);
       });

@@ -63,11 +63,16 @@
   ];
 
   SC.MENU_CATS = {
-    pastry: { en: "Pastries", es: "Pan dulce y hojaldres" },
-    savory: { en: "Savory", es: "Salados" },
-    bread: { en: "Bread", es: "Panes" },
-    cake: { en: "Cakes & slices", es: "Pasteles y rebanadas" },
-    drink: { en: "Coffee", es: "Café" },
+    pastry: { en: "Pastries", es: "Pan dulce y hojaldres", img: "pastelito",
+      alt: { en: "Guava and cheese pastelito cut open to show the pink guava and cream cheese filling", es: "Pastelito de guayaba y queso abierto, con el relleno de guayaba y queso crema" } },
+    savory: { en: "Savory", es: "Salados", img: "empanada",
+      alt: { en: "Golden baked beef empanadas, two broken open to show the seasoned filling", es: "Empanadas de carne doradas, dos abiertas mostrando el relleno sazonado" } },
+    bread: { en: "Bread", es: "Panes", img: "sourdough",
+      alt: { en: "Crusty sourdough loaf on a wooden board with slices showing an airy crumb", es: "Pan de masa madre crujiente sobre una tabla, con rebanadas de miga aireada" } },
+    cake: { en: "Cakes & slices", es: "Pasteles y rebanadas", img: "cupcake",
+      alt: { en: "Four assorted cupcakes: vanilla, chocolate, red velvet and dulce de leche", es: "Cuatro cupcakes variados: vainilla, chocolate, red velvet y dulce de leche" } },
+    drink: { en: "Coffee", es: "Café", img: "latte",
+      alt: { en: "Café con leche with heart latte art next to a croissant", es: "Café con leche con un corazón en la espuma junto a un croissant" } },
   };
 
   // Custom-order options
@@ -106,6 +111,10 @@
       heroTitle: "Fresh pastelitos, cafecito & celebration cakes",
       heroText: "A made-up neighborhood bakery used to show off a bilingual (English/Spanish) customer-service chatbot. Ask it about the menu, hours, or order a custom cake.",
       heroCta: "Chat with our assistant",
+      heroImgAlt: "Guava pastelitos, a cafecito and a berry-topped celebration cake on a bakery counter (illustrative photo)",
+      cakeImgAlt: "Two-tier cream celebration cake with peach and yellow sugar flowers (illustrative photo)",
+      heroBadge: "Baked daily · fictional bakery",
+      photoNote: "Photos are AI-generated illustrations for this demo.",
       menuTitle: "Menu & prices",
       menuNote: "Sample prices for a fictional business.",
       visitTitle: "Hours & location",
@@ -187,6 +196,10 @@
       heroTitle: "Pastelitos recién hechos, cafecito y pasteles para celebrar",
       heroText: "Una panadería de barrio inventada para mostrar un chatbot de atención al cliente bilingüe (inglés/español). Pregúntale por el menú, el horario o encarga un pastel.",
       heroCta: "Habla con nuestro asistente",
+      heroImgAlt: "Pastelitos de guayaba, un cafecito y un pastel de celebración con frutos rojos en el mostrador (foto ilustrativa)",
+      cakeImgAlt: "Pastel de dos pisos color crema con flores de azúcar durazno y amarillas (foto ilustrativa)",
+      heroBadge: "Horneado a diario · panadería ficticia",
+      photoNote: "Las fotos son ilustraciones generadas con IA para esta demo.",
       menuTitle: "Menú y precios",
       menuNote: "Precios de ejemplo de un negocio ficticio.",
       visitTitle: "Horario y ubicación",
