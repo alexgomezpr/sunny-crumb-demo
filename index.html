@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sunny Crumb Bakery (fictional) · Bilingual chatbot demo</title>
+  <meta name="description" content="Portfolio demo: a bilingual English/Spanish customer-service chatbot for a fictional Orlando bakery. Not a real business.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="demo-banner" role="note">
+    <strong>DEMO</strong> <span data-i18n="demoBanner">Demo, fictional business — this is a portfolio project. Sunny Crumb Bakery is not real and no orders are taken.</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" id="top">
+      <span class="brand-logo" aria-hidden="true">☀️</span>
+      <span class="brand-text">Sunny Crumb <small>Bakery · <em>fictional</em></small></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#menu" data-i18n="navMenu">Menu</a>
+      <a href="#visit" data-i18n="navVisit">Visit</a>
+      <a href="#orders" data-i18n="navOrders">Custom cakes</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker" data-i18n="heroKicker">Orlando, FL · fictional bakery</p>
+        <h1 data-i18n="heroTitle">Fresh pastelitos, cafecito & celebration cakes</h1>
+        <p data-i18n="heroText">A made-up neighborhood bakery used to show off a bilingual chatbot.</p>
+        <button type="button" class="btn btn-primary" data-open-chat="" data-i18n="heroCta">Chat with our assistant</button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-plate">🥐<span>🧁</span><span>☕</span></div>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <h2 data-i18n="menuTitle">Menu & prices</h2>
+      <p class="muted" data-i18n="menuNote">Sample prices for a fictional business.</p>
+      <div id="menu-grid" class="menu-grid"></div>
+    </section>
+
+    <section id="visit" class="section visit">
+      <div>
+        <h2 data-i18n="visitTitle">Hours & location</h2>
+        <div id="hours-list" class="hours-list"></div>
+      </div>
+      <div class="address-card">
+        <div class="pin" aria-hidden="true">📍</div>
+        <p><strong id="address">123 Make-Believe Lane, Orlando, FL</strong><br>
+          <span class="muted" data-i18n="addressNote">(fictional address)</span></p>
+      </div>
+    </section>
+
+    <section id="orders" class="section orders">
+      <h2 data-i18n="ordersTitle">Custom celebration cakes</h2>
+      <p data-i18n="ordersText">Birthdays, weddings, quinceañeras and baby showers.</p>
+      <button type="button" class="btn btn-secondary" data-open-chat="#order" data-i18n="ordersCta">Start a cake request</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer">Portfolio demo of a scripted bilingual chatbot · Fictional business · No real contact info</p>
+  </footer>
+
+  <!-- Chat widget -->
+  <button type="button" id="chat-launcher" class="chat-launcher" aria-controls="chat-panel" aria-expanded="false"
+          data-i18n-attr="aria-label:open;title:open" aria-label="Open chat">
+    <span aria-hidden="true">💬</span>
+  </button>
+
+  <section id="chat-panel" class="chat-panel" role="dialog" aria-labelledby="chat-title" hidden>
+    <header class="chat-header">
+      <div class="chat-avatar" aria-hidden="true">☀️</div>
+      <div class="chat-titles">
+        <h2 id="chat-title" data-i18n="botName">Sunny Crumb Assistant</h2>
+        <p class="chat-sub"><span class="demo-pill" data-i18n="botSub">Demo · fictional business</span></p>
+      </div>
+      <div class="lang-toggle small" role="group" aria-label="Language / Idioma">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button type="button" id="chat-restart" class="icon-btn" data-i18n-attr="aria-label:restart;title:restart" aria-label="Restart conversation">↺</button>
+      <button type="button" id="chat-close" class="icon-btn" data-i18n-attr="aria-label:close;title:close" aria-label="Close chat">✕</button>
+    </header>
+    <div id="chat-log" class="chat-log" role="log" aria-live="polite"></div>
+    <div id="chat-chips" class="chat-chips" hidden></div>
+    <form id="chat-form" class="chat-form" autocomplete="off">
+      <label for="chat-input" class="sr-only" data-i18n="placeholder">Type a message…</label>
+      <input id="chat-input" type="text" maxlength="300" data-i18n-attr="placeholder:placeholder" placeholder="Type a message…">
+      <button type="submit" class="send-btn" data-i18n-attr="aria-label:send" aria-label="Send">➤</button>
+    </form>
+  </section>
+
+  <script src="js/config.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/ai-provider.js"></script>
+  <script src="js/bot-engine.js"></script>
+  <script src="js/widget.js"></script>
+</body>
+</html>
